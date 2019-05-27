@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "F:\\code\\Android-SDK@1.9.9.63615_20190523\\UniPlugin-Hello-AS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\uniapp-release.aar\\5df3051dc00f7126aa88896aba2063d7\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "50",
+                        "endOffsets": "101"
+                    }
+                }
+            ]
+        }
+    ]
+}

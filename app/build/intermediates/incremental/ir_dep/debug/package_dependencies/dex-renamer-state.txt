@@ -1,0 +1,4 @@
+#Fri May 24 14:36:04 CST 2019
+base.0=F\:\\code\\Android-SDK@1.9.9.63615_20190523\\UniPlugin-Hello-AS\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,20 @@
+{
+  "nativePlugins": [
+    {
+      "hooksClass": "",
+      "plugins": [
+        {
+          "type": "module",
+          "name": "DCloud-RichAlert",
+          "class": "uni.dcloud.io.uniplugin_richalert.RichAlertWXModule"
+        }
+      ]
+    },
+    {
+      "hooksClass": "uni.dcloud.io.uniplugin_stepcounter.StepCounterHookProxy"
+    },
+    {
+      "hooksClass": "com.uniplugin_zakvideo.UniJCVideoWXComponent_AppProxy"
+    }
+  ]
+}

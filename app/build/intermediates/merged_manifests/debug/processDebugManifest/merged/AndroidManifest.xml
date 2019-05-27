@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.HBuilder.integrate"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="28" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <!-- Barcode(二维码)  begin -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> <!-- 华为修改角标需要设置权限 -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.yulong.android.launcherL.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.meizu.flyme.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.bbk.launcher2.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.qiku.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.zte.mifavor.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.lenovo.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.google.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.yulong.android.launcher3.READ_SETTINGS" />
+    <uses-permission android:name="org.adw.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.qihoo360.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="net.qihoo.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="org.adwfreak.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="org.adw.launcher_donut.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.launcher3.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.fede.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.sec.android.app.twlauncher.settings.READ_SETTINGS" />
+    <uses-permission android:name="com.tencent.qqlauncher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.launcher2.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.ebproductions.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.nd.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.yulong.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.mylauncher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.ztemt.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="cn.nubia.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.gionee.amisystem.permission.READ_SHORTCUT" /> <!-- 8.0apk安装权限 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="25.3.1" /> <!-- Barcode(二维码)  end -->
+    <application
+        android:name="io.dcloud.application.DCloudApplication"
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:debuggable="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:usesCleartextTraffic="true" >
+
+        <!-- 应用入口 -->
+        <activity
+            android:name="io.dcloud.PandoraEntry"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc|fontScale"
+            android:hardwareAccelerated="true"
+            android:theme="@style/TranslucentTheme"
+            android:windowSoftInputMode="adjustResize" >
+            <intent-filter>
+                <data android:scheme="hbuilder" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter>
+                <data android:mimeType="image/*" />
+
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="dcloud_uninview_background"
+            android:value="true" />
+
+        <activity
+            android:name="io.dcloud.PandoraEntryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc|fontScale"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:permission="com.miui.securitycenter.permission.AppPermissionsEditor"
+            android:screenOrientation="user"
+            android:theme="@style/DCloudTheme"
+            android:windowSoftInputMode="adjustResize" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <data android:scheme="h56131bcf" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="io.dcloud.common.adapter.io.MiniServerService"
+            android:exported="false" />
+
+        <receiver android:name="io.dcloud.common.adapter.io.PushReceiver" >
+            <intent-filter>
+                <action android:name="dcloud.push.broswer" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="io.dcloud.imagepick.CustomGalleryActivity"
+            android:exported="false"
+            android:noHistory="true" />
+        <activity
+            android:name="io.dcloud.feature.nativeObj.photoview.PhotoActivity"
+            android:noHistory="false"
+            android:theme="@style/DeviceDefault.Light" />
+        <activity
+            android:name="io.dcloud.appstream.StreamAppMainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity=":list"
+            android:theme="@android:style/Theme.Wallpaper.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="streamapp" />
+                <data android:scheme="streamappmain" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="io.dcloud.WebAppActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc|fontScale"
+            android:hardwareAccelerated="true"
+            android:icon="@drawable/dcloud_recent"
+            android:label="@string/stream_my"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity=":stream"
+            android:theme="@style/DCloudTheme"
+            android:windowSoftInputMode="adjustResize" />
+
+        <service android:name="io.dcloud.streamdownload.DownloadService" >
+            <intent-filter>
+                <action android:name="com.qihoo.life.plugin.streamapp.ACTION_PUSH_TO_PLUGIN" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="io.dcloud.appstream.service.DaemonService"
+            android:exported="false"
+            android:process=":daemon" />
+        <service
+            android:name="io.dcloud.appstream.service.ProtectService"
+            android:exported="false" /> <!-- <receiver -->
+        <!-- android:name="io.dcloud.appstream.receiver.DaemonReceiver"> -->
+        <!-- <intent-filter -->
+        <!-- android:priority="1000"> -->
+        <!-- <action -->
+        <!-- android:name="android.intent.action.BOOT_COMPLETED" /> -->
+        <!-- <action -->
+        <!-- android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
+        <!-- <action -->
+        <!-- android:name="android.intent.action.USER_PRESENT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <service android:name="io.dcloud.multiprocess.service.MultiProcessService" />
+
+        <activity
+            android:name="io.dcloud.multiprocess.activity.WebAppActivity1"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+            android:hardwareAccelerated="true"
+            android:icon="@drawable/dcloud_recent"
+            android:label="@string/stream_my"
+            android:launchMode="singleTask"
+            android:process="io.dcloud.multiprocess.webapp1"
+            android:screenOrientation="portrait"
+            android:taskAffinity=":webapp1"
+            android:theme="@style/DCloudTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="io.dcloud.appstream.OpenStreamAppTransferActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+            android:screenOrientation="portrait"
+            android:theme="@style/OpenStreamAppTransferActivityTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+        </activity>
+
+        <meta-data
+            android:name="MultiProcessCount"
+            android:value="1" />
+
+        <activity
+            android:name="io.dcloud.ProcessMediator"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="io.dcloud.WebviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ThemeNoTitleBar"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+
+        <receiver android:name="io.dcloud.common.adapter.io.DownloadReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+
+                <data android:scheme="package" /> <!-- HERE! -->
+            </intent-filter>
+        </receiver>
+        <!--
+            <meta-data
+            android:name="DCLOUD_STREAMAPP_CHANNEL"
+            android:value="io.dcloud.%APPID%|%APPID%|" />
+        -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+
+        <receiver
+            android:name="com.taobao.weex.WXGlobalEventReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
+
+        <service
+            android:name="com.alibaba.android.bindingx.plugin.weex.WXBindingXModuleService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="bindingx" />
+                <action android:name="binding" />
+                <action android:name="expressionBinding" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
